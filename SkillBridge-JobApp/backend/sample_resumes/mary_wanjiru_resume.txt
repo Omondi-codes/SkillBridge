@@ -1,0 +1,185 @@
+Mary Wanjiru Njeri
+
+Email: mary.wanjiru@gmail.com
+Phone: +254 723 456 789
+Location: Nairobi, Kenya
+LinkedIn: linkedin.com/in/marywanjiru
+Portfolio: marywanjiru.dev
+
+======================================================================
+
+Professional Summary
+
+Creative Data Scientist with 3+ years of experience in machine learning, data analytics, and business intelligence. Specialized in developing predictive models and extracting actionable insights from complex datasets. Strong background in Python, statistical analysis, and data visualization. Passionate about using data to drive decision-making in African businesses.
+
+======================================================================
+
+Core Competencies
+
+Data Science & ML
+- Machine Learning (Supervised & Unsupervised)
+- Deep Learning & Neural Networks
+- Natural Language Processing (NLP)
+- Computer Vision
+- Time Series Forecasting
+- Predictive Analytics
+- A/B Testing & Experimentation
+
+Programming & Tools
+- Languages: Python, R, SQL, Julia
+- ML Libraries: TensorFlow, PyTorch, scikit-learn, Keras, XGBoost
+- Data Analysis: Pandas, NumPy, SciPy, statsmodels
+- Visualization: Matplotlib, Seaborn, Plotly, Tableau, Power BI
+- Big Data: Apache Spark, Hadoop, Hive
+- Cloud: AWS (SageMaker, S3), Google Cloud (Vertex AI), Azure ML
+
+Database & Storage
+- PostgreSQL, MySQL, MongoDB
+- BigQuery, Redshift, Snowflake
+- Redis, Elasticsearch
+
+Development Tools
+- Jupyter Notebook, VS Code, PyCharm
+- Git, Docker, MLflow
+- FastAPI, Flask, Streamlit
+
+======================================================================
+
+Work Experience
+
+Data Scientist
+Equity Bank Kenya | Nairobi, Kenya
+March 2022 - Present
+
+- Developed credit risk assessment model using XGBoost, improving loan approval accuracy by 25%
+- Built customer churn prediction system reducing attrition by 18%
+- Created real-time fraud detection algorithm processing 100,000+ transactions daily
+- Designed interactive dashboards in Tableau for executive decision-making
+- Technologies: Python, TensorFlow, PostgreSQL, AWS, Tableau
+
+Achievements:
+- Increased model precision from 72% to 91% through feature engineering
+- Saved bank Ksh 15M annually through improved fraud detection
+- Presented findings to C-suite executives monthly
+
+Junior Data Analyst
+Safaricom PLC | Nairobi, Kenya
+July 2020 - February 2022
+
+- Analyzed customer usage patterns for 40M+ M-PESA users
+- Developed predictive models for network capacity planning
+- Created automated reporting system reducing manual work by 60%
+- Collaborated with product team to optimize pricing strategies
+- Technologies: Python, SQL, Tableau, Apache Spark
+
+Achievements:
+- Identified revenue opportunity worth Ksh 200M through data analysis
+- Improved forecasting accuracy by 35%
+
+Data Analyst Intern
+iHub Nairobi | Nairobi, Kenya
+January 2020 - June 2020
+
+- Conducted market research and competitive analysis for startups
+- Built data collection and analysis pipelines
+- Created visualizations for stakeholder presentations
+- Technologies: Python, Excel, Power BI
+
+======================================================================
+
+Education
+
+Master of Science in Data Science
+Strathmore University | Nairobi, Kenya
+September 2023 - Present (Expected Graduation: 2025)
+
+- Specialization: Machine Learning & AI
+- Current GPA: 3.9/4.0
+- Thesis: "Predictive Analytics for Financial Inclusion in Kenya"
+
+Bachelor of Science in Mathematics & Computer Science
+Kenyatta University | Nairobi, Kenya
+September 2016 - June 2020
+
+- GPA: 3.7/4.0 (Second Class Honors - Upper Division)
+- Capstone: Sales Forecasting System using LSTM Networks
+
+======================================================================
+
+Certifications
+
+- TensorFlow Developer Certificate | Google | 2023
+- AWS Certified Machine Learning - Specialty | Amazon | 2023
+- Data Science Professional Certificate | IBM | 2022
+- Deep Learning Specialization | Andrew Ng, Coursera | 2021
+- Google Data Analytics Professional Certificate | Google | 2020
+
+======================================================================
+
+Projects
+
+Customer Segmentation Dashboard
+- Developed RFM analysis and clustering model for retail chain
+- Identified 5 distinct customer segments driving targeted marketing
+- Impact: 30% increase in marketing campaign effectiveness
+- Stack: Python, K-Means, DBSCAN, Streamlit, PostgreSQL
+
+Crop Yield Prediction System
+- Built ML model predicting maize yields for small-scale farmers
+- Integrated weather data, soil quality, and historical yields
+- Achieved 88% prediction accuracy
+- Stack: Python, Random Forest, XGBoost, Flask, MongoDB
+
+Sentiment Analysis for Social Media
+- Analyzed 500,000+ Swahili tweets about Kenyan brands
+- Built custom NLP model for Swahili language processing
+- Provided actionable insights for brand management
+- Stack: Python, spaCy, BERT, FastAPI, Elasticsearch
+
+======================================================================
+
+Technical Skills
+
+Machine Learning: Regression, Classification, Clustering, Ensemble Methods, Neural Networks, CNNs, RNNs, LSTMs, GANs, Transfer Learning
+
+Statistical Analysis: Hypothesis Testing, A/B Testing, Regression Analysis, Time Series Analysis, Bayesian Statistics
+
+Data Engineering: ETL Pipelines, Data Cleaning, Feature Engineering, Data Warehousing
+
+Business Intelligence: KPI Development, Dashboard Design, Data Storytelling
+
+======================================================================
+
+Publications & Presentations
+
+- "Machine Learning for Financial Inclusion in Kenya" - African Data Science Conference 2024
+- "Predicting Customer Churn in Banking" - Nairobi Data Science Meetup 2023
+- Blog: Regular contributor to Towards Data Science (10,000+ followers)
+
+======================================================================
+
+Awards
+
+- Equity Bank Innovation Award - Best ML Model (2023)
+- Women in Data Science Kenya - Rising Star Award (2022)
+- Kenyatta University Best Project - Mathematics Department (2020)
+
+======================================================================
+
+Languages
+
+- English (Fluent)
+- Swahili (Native)
+- Kikuyu (Native)
+
+======================================================================
+
+Professional Development
+
+- Active member of Kenya Data Science & AI Community
+- Regular attendee of Nairobi Women in Tech meetups
+- Kaggle Competitions: Expert tier (Top 5%)
+
+======================================================================
+
+Last Updated: October 2025

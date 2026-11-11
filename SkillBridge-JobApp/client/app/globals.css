@@ -1,0 +1,521 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Deconstructed Carousel Theme — Light */
+    --bg-color: #f1f1f1;
+    --card-bg: #fafafa;
+    --black: #080808;
+    --white: #fafafa;
+    --accent: #ff2d55;
+    --grid-color: rgba(0, 0, 0, 0.08);
+    --frame-color: rgba(8, 8, 8, 0.8);
+    --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Semantic tokens */
+    --color-bg: var(--bg-color);
+    --color-surface: var(--card-bg);
+    --color-text: var(--black);
+    --color-text-muted: #6b7280;
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-nav-bg: #ffffff;
+    --color-nav-border: #e5e7eb;
+    --color-input-bg: var(--card-bg);
+    --color-input-border: rgba(0, 0, 0, 0.1);
+
+    /* Gradient colors */
+    --gradient-red: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    --gradient-cyan: linear-gradient(135deg, #4ecdc4, #7ee8e1);
+    --gradient-yellow: linear-gradient(135deg, #ffd166, #ffe0a3);
+    --gradient-green: linear-gradient(135deg, #06d6a0, #62f7d1);
+    --gradient-blue: linear-gradient(135deg, #118ab2, #5ac8e3);
+    --gradient-dark-blue: linear-gradient(135deg, #073b4c, #3c7c8c);
+  }
+
+  /* Dark mode — applied via .dark class on <html> */
+  html.dark {
+    --bg-color: #0f0f0f;
+    --card-bg: #1a1a1a;
+    --black: #f5f5f5;
+    --white: #1a1a1a;
+    --grid-color: rgba(255, 255, 255, 0.05);
+    --frame-color: rgba(245, 245, 245, 0.6);
+
+    --color-bg: #0f0f0f;
+    --color-surface: #1a1a1a;
+    --color-text: #f5f5f5;
+    --color-text-muted: #9ca3af;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-nav-bg: #111111;
+    --color-nav-border: #2a2a2a;
+    --color-input-bg: #222222;
+    --color-input-border: rgba(255, 255, 255, 0.1);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--black);
+    font-feature-settings: "salt" 1, "ss01" 1, "ss02" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+  }
+
+  /* Selection color */
+  ::selection {
+    background: var(--accent);
+    color: white;
+  }
+
+  /* Animations */
+  @keyframes progress {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 70%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn-primary {
+    position: relative;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0.75rem 2rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--black);
+    border: 1px solid var(--black);
+    padding: 0.75rem 2rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--black);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+
+  .btn-accent {
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 0.75rem 2rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+  }
+
+  .btn-accent:hover {
+    background-color: #e5284b;
+    transform: translateY(-2px);
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border-radius: 0.375rem;
+    background-color: var(--color-input-bg);
+    border: 1px solid var(--color-input-border);
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+
+  .input-field:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 45, 85, 0.1);
+  }
+
+  .card {
+    background-color: var(--color-surface);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-fast);
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Deconstructed Card System */
+  .deconstructed-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
+  }
+
+  .card-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform var(--transition-slow), opacity var(--transition-slow);
+  }
+
+  .card-background {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+  }
+
+  .card-frame {
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .frame-path {
+    fill: none;
+    stroke: var(--frame-color);
+    stroke-width: 1;
+    stroke-dasharray: 1520;
+    stroke-dashoffset: 1520;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .deconstructed-card:hover .frame-path {
+    stroke-dashoffset: 0;
+  }
+
+  /* Grid Background */
+  .bg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .grid-line {
+    position: absolute;
+    background-color: var(--grid-color);
+    transition: transform var(--transition-slow), opacity var(--transition-fast);
+  }
+
+  .grid-line.horizontal {
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0.3);
+    transform-origin: left;
+  }
+
+  .grid-line.vertical {
+    height: 100%;
+    width: 1px;
+    transform: scaleY(0.3);
+    transform-origin: top;
+  }
+
+  .deconstructed-card:hover .grid-line.horizontal {
+    transform: scaleX(1);
+  }
+
+  .deconstructed-card:hover .grid-line.vertical {
+    transform: scaleY(1);
+  }
+
+  /* Background Objects */
+  .bg-objects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .bg-object {
+    position: absolute;
+    opacity: 0.3;
+    transition: transform var(--transition-slow), opacity var(--transition-slow);
+  }
+
+  .bg-object.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    bottom: 40px;
+    left: -30px;
+    transform: translateY(20px);
+  }
+
+  .bg-object.square {
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    top: 40px;
+    right: 30px;
+    transform: rotate(45deg) translateY(-20px);
+  }
+
+  .bg-object.triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 70px solid rgba(0, 0, 0, 0.05);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  .deconstructed-card:hover .bg-object {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0);
+  }
+
+  .deconstructed-card:hover .bg-object.square {
+    transform: rotate(45deg) translate(0, 0);
+  }
+
+  .deconstructed-card:hover .bg-object.triangle {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  /* Content Fragments */
+  .content-fragment {
+    position: relative;
+  }
+
+  .content-text {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+    transform: translateY(10px);
+    opacity: 0.7;
+  }
+
+  .content-subtext {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+    color: var(--black);
+    opacity: 0.5;
+    transform: translateY(10px);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+  }
+
+  .deconstructed-card:hover .content-text,
+  .deconstructed-card:hover .content-subtext {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.05s;
+  }
+
+  /* Meta Elements */
+  .fragment-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .meta-line {
+    width: 40px;
+    height: 1px;
+    background-color: var(--black);
+    transform: scaleX(0.5);
+    transform-origin: left;
+    transition: transform var(--transition-fast);
+  }
+
+  .meta-text {
+    font-family: "Space Mono", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    transform: translateX(-5px);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+  }
+
+  .deconstructed-card:hover .meta-line {
+    transform: scaleX(1);
+    transition-delay: 0.05s;
+  }
+
+  .deconstructed-card:hover .meta-text {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: 0.15s;
+  }
+
+  /* CTA Elements */
+  .cta-link {
+    text-decoration: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 0;
+  }
+
+  .cta-box {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: 100%;
+    background-color: var(--black);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-fast);
+  }
+
+  .cta-text {
+    position: relative;
+    font-family: "Space Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--black);
+    transition: color var(--transition-fast);
+    transform: translateX(-5px);
+    opacity: 0.7;
+    transition: transform var(--transition-fast), opacity var(--transition-fast), color var(--transition-fast);
+  }
+
+  .deconstructed-card:hover .cta-text {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
+
+  .cta-link:hover .cta-box {
+    transform: scaleX(1);
+  }
+
+  .cta-link:hover .cta-text {
+    color: var(--white);
+  }
+
+  /* Wave SVG for cards */
+  .wave-svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .deconstructed-card:hover .wave-svg {
+    transform: scale(1.05);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animations */
+  .animate-fadeIn {
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-slideInLeft {
+    animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-drawIn {
+    animation: drawIn 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes drawIn {
+  from {
+    stroke-dashoffset: 1520;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
